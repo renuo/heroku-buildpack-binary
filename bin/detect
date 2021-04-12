@@ -1,0 +1,11 @@
+#!/bin/sh
+
+bin_files=$(file ./* | grep executable)
+bin_count=$(echo "$bin_files" | wc -l)
+
+if [ "$bin_count" -eq 1 ]; then
+  echo "Binary"
+  exit 0
+else
+  exit 1
+fi

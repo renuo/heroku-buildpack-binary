@@ -1,0 +1,8 @@
+#!/bin/sh
+
+indent() {
+  sed -u 's/^/       /'
+}
+
+echo "Don't do anything" | indent
+

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+bin_file=$(file ./* | grep -m1 executable | cut -d":" -f1)
+
+cat << EOF
+---
+default_process_types:
+  web: $bin_file
+EOF
