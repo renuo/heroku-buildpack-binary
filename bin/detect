@@ -1,6 +1,6 @@
 #!/bin/sh
 
-bin_files=$(file ./* | grep executable)
+bin_files=$(find $1 -type f -executable -print -maxdepth 1)
 bin_count=$(echo "$bin_files" | wc -l)
 
 if [ "$bin_count" -eq 1 ]; then

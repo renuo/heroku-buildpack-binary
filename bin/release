@@ -1,6 +1,7 @@
 #!/bin/sh
 
-bin_file=$(file ./* | grep -m1 executable | cut -d":" -f1)
+cd $1
+bin_file=$(find . -type f -executable -print -maxdepth 1)
 
 cat << EOF
 ---
